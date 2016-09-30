@@ -1,0 +1,73 @@
+Diagnózis szerint
+
+mortalitas 30 nap 1 év
+
+STEMI NSTEM vs társbetegségek
+
+
+Tisztelt Jánosi András!
+
+Elõszöris válaszolok néhány kérdésére:
+Szignifikancia: Általános gyakorlat, hogy p<0.05 esetén tekintünk szignifikánsnak egy hatást, azaz 95%-os szignifikancia szinttel dolgozunk. Amikor azonban sok faktor van és interakciók is, és olyan módszerrel dolgozunk, mint én (sorra kiveszem a modellból a nem szignifikáns hatásokat, és berakom azokat, amelyek szignifikánsá válnak), akkor a 95%-os szignifikancia szint csak látszólagos, nem szabad megbízni teljes mértékben a p értékekben. Ezért döntöttem úgy, hogy p=0.08 hatásokat is megtartok a modellben - egyelõre - késõbb ezeket, ha szakmailag is megalapozott, ki lehet venni a modellbõl.
+
+Interakciók: Eddig nem küldtem olyan táblázatot, ahol a fõ hatások vagy akár az interakciók nagysága látható lenne. Természetesen ennek nincsen akadálya. Azért nem tettem eddig, mert (szerintem) nagyon nehéz értelmezni ezeket a számokat. Helyette küldtem az interaktív ábrákat. Egy interakciók onnan látszódik az ábrán, hogy az egyik faktort mozgatva a másik faktortól való függésnak a meredeksége változik. Ezen az ábrán a meredekség változást egy kicsit nehezebb megfigyelni (ellentétben egy lineáris regresszióval), mert minden egyes kis ábra egy szigmoid görbe (S vagy fordított S alakú). Néha a szigmoid görbe eltolódása is meredekségváltozásnak tûnhet. Ezért én mindig együtt néztem az interaktív ábrát és az interakciók szignifikanciáját.
+
+Mely tényezõ a legjelentõsebb? Erre a kérdésre is az a válaszom, hogy leginkább az interaktív ábráról derül ki. Legegyszerûbb válasz erre a kérdésre az lenne, hogy "ahol legmeredekebb görbét látunk". De ez nem ilyen egyszerû. 1. A faktoroknak a mértékegységét is figyelembe kell venni: Pl. ha 10 év korkülönbség, 10 percnyi kórházbajutás különbség, és 10-es pulzusszámbeli különbség ugyanakkora esély különbséget okoz, attól még nem biztos, hogy egy szakértõ ugyanakkorának itéli meg a jelentõségüket.  2. Az interakciók is megbonyolítják az értelmezést: Egy tényezõnek nagy jelentõsége van egy másik faktor bizonyos állásánál, és nincs egy másik állásánál.
+A p értékekre ilyenkor nem nagyon szoktunk nézni - azok csak azt mondják meg, hogy mennyire vagyunk biztosak benne, hogy egyáltalán van hatása egy tényezõnek.
+
+
+
+Elvégeztem egy túléléselemzést. A modellben szereplõ faktorok ugyanazok, amelyeket az elõzõ modelleben használtam (Tehát most nem válogattam ki, vagy be a szignifikáns faktorokat, hanem adottnak tekintettem õket korábbi elemzésbõl kiindúlva.). A túlélést napokban mértem: az elhalálozás napja mínusz a kórházba érkezés napja. Életben maradás esetén pedig azt tudjuk, hogy a beteg 2011.12.31-ig életben volt.
+Ismét csatolok egy interaktív ábrát. Ez tartalmaz 2 elõzõleg már elküldött modellt is: Kórházban elhalálozás, elhalálozás és a 3. modell: egy adott idõpontig való elhalálozás valószínûsége. Az utolsó "faktor" neve "Life", ezen lehet beállítani a napok számát.
+
+Csatolom továbbá a korábbi 2 elemzés, és a mostani túléléselemzés paramétertábláit. A túléléselemzés paramétereit (szerintem) még nehezebb értelmezni. Továbbá itt nem találhatóak p-értékek, helyette a paraméter becsült értékét és a standard hibáját kell nézni.
+
+Csatolok még egy rövid elemzést arról, hogy 65 év fölött és alatt van-e különbség a szignifikáns faktorok között.
+Érdekes módon 65 év alatt és fölött 2877 illetve 2862 megfigyelés (nem missing) volt, azaz majdnem egyenlõ.
+2 pdf csatolmány a fiatal és az idõs korosztályon végzett elemzéskor kapott paraméterbecsléseket illetve p értékeket tartalmazza.
+Néhány érdekesség: Fiataloknál nem szignifikáns a Diagnosis és a Smoker. Gender ellenkezõ elõjelû. 
+Egyéb faktorokban is és interakciókban is van különbség, de bármelyik lehet csupán a "véletlen mintavétel" miatt is (a fentiek is).
+
+
+Egy apró észrevétel: 730 napon túl csak halál eset van regisztrálva, cenzúrázás nem. Ez azért lehet, mert 2009-bõl csak a meghaltak vannak a rendszerben...?
+
+
+
+hány infarktus?
+ki kerül kórházba?
+Megfelelõ ellátást kap?
+Ha igen, idõben?
+Utókezelés?
+30 nappal, 1 évvel túlélés?
+
+
+Age - diagnosis - szignifikáns összefüggés: az idõsebbek NSTEMI-sek.
+
+STEMI-NSTEMI   - halálozás: nincs összefüggés (pedig itt ming a 12000 sor részt vett az elemzésben)
+
+124 halál eset ahol tudjuk a delay-t. 2-3 eset is megemeli a predikciót a 1500-6500-as tartományban.
+Lehet, hogy az 1 napon túli eseteket külön kéne kezelni, de természetesen ehhez kéne valamilyen alapos indok.  Pl: aki 1 napon túl jön be, annak nagyon enyhe az infarktusa...
+
+
+
+A smoker és az age elveszi a gender szignifikanciáját. De a killip és age is.
+
+Tisztelt Jánosi András!
+
+Megkaptam az adatbázist, és ezennel leírom az eddigi elemzéseim eredményeit:
+
+
+(Nagy problémám volt az elõzõ adatbázissal, hogy abból egyáltalán nem tûnt szignifikánsnak a delay változó.)
+
+Mortal elemzések (delay nélkül):
+5739/1001   Total
+5739/157     InHospital
+
+Mortal elemzések (delay-vel):
+2390/253   Total
+5739/42     InHospital
+
+
+Késõbb érkeznek be: a nõk, az idõsebbek, azok, akiknek már volt infarktusuk, és azok akiknek magasabb a pulzusuk (beérkezéskor) (ez utóbbinál fõleg megkérdõjelezhetõ, hogy mi az ok-okozati irány).
+Továbbra is rejtély marad, az, hogy a nõk miért késlekednek. Azt gondoltam, hogy a többi faktor (pl. életkor, korábbi infartkus) majd elveszi ezt a szignifikanciát. De nem. 2952 megfigyelés.
+Érdekesség: Akiknek DM, vagy MI -je volt, azok kapnak pussz több mint 100 percet. Szignifikáns!

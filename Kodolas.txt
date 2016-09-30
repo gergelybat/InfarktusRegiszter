@@ -1,0 +1,69 @@
+
+pci_hospital - hogy egyáltalán bekerült-e PCI kórházba
+transfer_to_pci_hospital - hogy elsõre, vagy másodikra került-e oda
+
+pci_hospital=1 transfer_to_pci_hospital=1  5467   immediate
+pci_hospital=1 transfer_to_pci_hospital=2  4250   transfer
+pci_hospital=1 transfer_to_pci_hospital=9  67       missing
+pci_hospital=0 transfer_to_pci_hospital=6  2123   nopci
+
+
+STEMI
+Coranography=0 Primary PCI=9 PCI=0  162
+Coranography=0 Primary PCI=0 PCI=0  939
+Coranography=1 Primary PCI=1 PCI=1 4977
+Coranography=1 Primary PCI=0 PCI=1  116
+Coranography=1 Primary PCI=9 PCI=0  406
+Coranography=1 Primary PCI=0 PCI=1  58
+
+6670
+
+NSTEMI
+Coranography=0 Primary PCI=6 PCI=1 1080
+Coranography=1 Primary PCI=6 PCI=0  1531
+Coranography=1 Primary PCI=6 PCI=1 2626 
+
+5237
+
+Minden Primary PCI   PCI is egyben
+
+NSTEMI esetén nem végeznek Primary PCI-t és nincs delay info.
+
+PCI hospital=0  -> ( primary PCI=0 vagy 6 ) és PCI=0
+
+CABG=1  ki kéne zárni, mert kevés eset van.
+STEMI-PCI hospital - Transfer - Primary PCI - Coronagraphy - PCI -vel együt, alig 10 van egy cellában.
+
+
+
+
+
+
+Name	Type	Length	Format	Informat	Label
+id_database	Character	16	$CHAR16.	$CHAR16.	ID_database
+health_id_number	Character	11	$CHAR11.	$CHAR11.	Health ID number
+diagnosis	Character	6	$CHAR6.	$CHAR6.	Diagnosis
+age	Numeric	8	F12.1	BEST12.	Age (y)
+gender	Numeric	8	BEST12.	BEST12.	Gender
+smoker	Numeric	8	BEST12.	BEST12.	Smoker (current or in med.history)
+dm	Numeric	8	BEST12.	BEST12.	DM in med.history
+ht	Numeric	8	BEST12.	BEST12.	HT in med.history
+mi	Numeric	8	BEST12.	BEST12.	MI in med.history
+stroke	Numeric	8	BEST12.	BEST12.	Stroke (TIA) in med.history
+killip	Numeric	8	BEST12.	BEST12.	Killip class on admission
+rrsyst	Numeric	8	BEST12.	BEST12.	RRsyst on admission
+rrdiast	Numeric	8	BEST12.	BEST12.	RRdiast on admission
+hr	Numeric	8	BEST12.	BEST12.	HR on admission
+pci_hospital	Numeric	8	BEST12.	BEST12.	PCI hospital
+transfer_to_pci_hospital	Numeric	8	BEST12.	BEST12.	Transfer to PCI hospital
+primary_pci	Numeric	8	BEST12.	BEST12.	Primary PCI
+delay	Numeric	8	BEST12.	BEST12.	Delay Symptom – PCI (min)
+coronarography	Numeric	8	BEST12.	BEST12.	Coronarography
+pci	Numeric	8	BEST12.	BEST12.	PCI
+cabg	Numeric	8	BEST12.	BEST12.	CABG
+specific_treatment	Numeric	8	BEST12.	BEST12.	Specific treatment
+apt_at_discharge	Numeric	8	BEST12.	BEST12.	APT at discharge
+brb_at_discharge	Numeric	8	BEST12.	BEST12.	BRB at discharge
+acei_arb_at_discharge	Numeric	8	BEST12.	BEST12.	ACEI/ARB at discharge
+statin_at_discharge	Numeric	8	BEST12.	BEST12.	Statin at discharge
+in_hospital_mortality	Numeric	8	BEST12.	BEST12.	In-hospital mortality
